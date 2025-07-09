@@ -15,6 +15,7 @@ The program is a Python-based Command-Line Interface (CLI) tool designed to cons
 
 ## User Instructions
 - The project should be written in Python.
-- A virtual environment must be used. The developer uses `asdf` for Python version management.
+- A virtual environment must be used. Always use the virtual environment located at `.venv`. The developer uses `asdf` for Python version management.
 - Do not implement specific broker connectors initially. Focus on the core framework, models, and logic.
 - DO NOT mention Claude or any AI assistant in git commit messages. Keep commits professional and focused on the code changes.
+- Run tests before committing: `python -m pytest tests/ -v` or with coverage: `python -m pytest tests/ --cov=src --cov-report=term-missing`

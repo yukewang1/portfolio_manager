@@ -51,7 +51,7 @@ class AlphaVantageFXConnector(FXConnectorBase):
             response = requests.get(API_URL, params=params)
             response.raise_for_status()
             data = response.json()
-            if "Realtime Currency Exchange Rate" in data:
+            if "Realtime Currency Exchange Rate" in data and "5. Exchange Rate" in data["Realtime Currency Exchange Rate"]:
                 rate = float(data["Realtime Currency Exchange Rate"]["5. Exchange Rate"])
                 rates[f"{from_currency}{to_currency}"] = rate
             else:
