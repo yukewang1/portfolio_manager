@@ -1,0 +1,20 @@
+# Define your portfolio holdings in this file.
+# This will be read by the FileBrokerConnector.
+
+accounts:
+  - name: "My Fidelity Account (USD)"
+    broker: "file"
+    holdings:
+      - { ticker: "VTI", quantity: 150, currency: "USD" }
+      - { ticker: "GOOG", quantity: 10, currency: "USD" } # This will be skipped based on config.yaml
+    cash_balances:
+      USD: 1000.0
+
+  - name: "My Questrade Account (CAD)"
+    broker: "file"
+    holdings:
+      - { ticker: "VFV.TO", quantity: 100, currency: "CAD" }
+      - { ticker: "BND", quantity: 50, currency: "USD" }
+    cash_balances:
+      CAD: 500.0
+      USD: 200.0

@@ -1,0 +1,36 @@
+# Portfolio Manager Configuration
+# Copy this file to config.yaml and fill in your details.
+
+# The primary currency for all reports and calculations.
+# Supported values: "USD", "CAD", etc.
+reporting_currency: "USD"
+
+# Path to the portfolio definition file.
+portfolio_file: "portfolio.yaml"
+
+# API keys for data connectors.
+api_keys:
+  # Example for a market data provider
+  alpha_vantage: "YOUR_API_KEY_HERE"
+
+# Options for the rebalancing engine.
+rebalance_options:
+  # A list of tickers to ignore during rebalancing calculations.
+  # These assets will not be sold.
+  skip_tickers:
+    - "GOOG"
+    - "MSFT"
+
+  # The tool will only recommend a rebalance if the allocation drift
+  # score exceeds this percentage.
+  rebalance_threshold: 5.0
+
+# Define your accounts here.
+# The 'connector' field will be used to select the right API.
+accounts:
+  - name: "Fidelity Roth IRA"
+    broker: "fidelity_api" # This will map to a specific connector class
+    account_id: "123456789"
+  - name: "Questrade Margin"
+    broker: "questrade_api"
+    account_id: "987654321"
